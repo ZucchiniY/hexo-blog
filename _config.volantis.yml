@@ -12,28 +12,28 @@ navbar:
       rows:
         - name: 分类
           icon: fad fa-folder-open TURQUOISE
-          url: /navigation/categories/
+          url: /categories/
         - name: 标签
           icon: fad fa-tags EMERALD
-          url: /navigation/tags/
+          url: /tags/
         - name: 归档
           icon: fad fa-archive PETERRIVE
-          url: /navigation/archives/
+          url: /archives/
     - name: 更多
       icon: fad fa-megaphone POMEGRANATE
       rows:
         - name: 关于
           icon: fad fa-drafting-compass SUNFLOWER
-          url: /page/about/
+          url: /about/
         - name: 笔记
           icon: fad fa-books CARROT
-          url: /page/notes/  
+          url: /notes/  
         - name: 友链
           icon: fad fa-stamp ALIZARIN
-          url: /page/friends/   
+          url: /friends/   
         - name: 留言
           icon: fad fa-comment-alt-smile WETASPHALT
-          url: /page/info/
+          url: /info/
     - name: 音乐
       icon: fad fa-compact-disc WISTERIA
 
@@ -51,19 +51,17 @@ cover:
   search: 知无不言
   features:
     - name: 文档
-      url: /page/notes/
+      url: /notes/
     - name: 关于
-      url: /page/about/
+      url: /about/
     - name: 友链
-      url: /page/friends/
+      url: /friends/
     - name: 留言
-      url: /page/info/
+      url: /info/
     - name: 标签
-      url: /navigation/tags/
+      url: /tags/
     - name: 归档
-      url: /navigation/archives/
-
-
+      url: /archives/
 
 pages:
   friends:
