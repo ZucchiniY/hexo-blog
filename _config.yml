@@ -126,6 +126,7 @@ feed:
   template:
 
 
+
 # 站点地图
 sitemap:
   path: sitemap.xml
@@ -156,3 +157,8 @@ hexo_submit_urls_to_search_engine:
   replace_with: https://zucchiniy.cn
 
   
+import:
+  link:
+    - <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/zucchiniy/common@master/favicon/favicon-32x32.ico">
+    - <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/zucchiniy/common@master/favicon/favicon-16x16.ico">
+    - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zucchiniy/common@master/favicon/favicon.ico">

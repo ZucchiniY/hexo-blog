@@ -46,7 +46,7 @@ cover:
     home: true
     archive: false
     others: false
-  background:
+  background: https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/210616110426.jpeg
   title: 夏南瓜的小站
   search: 知无不言
   features:
@@ -268,7 +268,11 @@ plugins:
   darkmodejs:
     enable: true
   backstretch:
-    enable: false
+    enable: true
+    position: fixed
+    images:
+      - https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/210616110426.jpeg
+
 
 
 
