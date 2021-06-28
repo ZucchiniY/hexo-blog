@@ -149,14 +149,14 @@ sidebar:
         icon: fad fa-award ASBESTOS
       type:
         runtime:
-          data: '2018/03/15'
+          data: '2015/12/23'
         wordcount:
           unit: ''
         visitcounter:
           siteuv:
-            enable: false
+            enable: true
           sitepv:
-            enable: false
+            enable: true
     notice:
       class: text
       display: [desktop]
@@ -164,7 +164,7 @@ sidebar:
         icon: fad fa-user-robot ASBESTOS
         title: 公告信息
       content:
-        - '<p>整修中...</p>'
+        - '<p>小破站迁移中...</p>'
     updateList:
       class: text
       display: [desktop]
@@ -172,9 +172,8 @@ sidebar:
         icon: fad fa-praying-hands ASBESTOS
         title: 更新日志
       content:
-        - 1.自定义右键添加了更多的功能项
-        - 2.上线文章页阅读模式(右键开启)
-        - 3.音乐播放时启用右键菜单项控制
+        - 1. 文章迁移到 Hexo
+        - 2. 重新配置主题样式
     # 自定义 站内导航    
     navigation:
       class: grid
@@ -186,36 +185,19 @@ sidebar:
       rows:
         - name: 文档笔记
           icon: fad fa-books GREENSEA
-          url:  /page/notes/
-        - name: 用户手册
-          icon: fad fa-books-medical NEPHRITIS
-          url: /page/notes/manual/
+          url:  /notes/
         - name: 建站历史
           icon: fad fa-leaf-heart POMEGRANATE
-          url: /page/timeline/
+          url: /timeline/
         - name: 站内留言
           icon: fad fa-comment-alt-smile WISTERIA
-          url: /page/info/
+          url: /info/
         - name: 小伙伴们
           icon: fad fa-stamp CONCRETE
-          url: /page/friends/
+          url: /friends/
         - name: RSS 订阅
           icon: fad fa-rss SUNFLOWER
           url: /atom.xml    
-    wiki-hexo-theme:
-      class: list
-      display: [desktop, mobile]
-      header:
-        icon: fad fa-flower-daffodil ASBESTOS
-        title: 笔记本
-        url: /page/notes/index.html
-      rows:
-        - name: '<i class="fad fa-kerning"></i> Github Actions'
-          url: /page/notes/actions/index.html
-        - name: '<i class="fad fa-kerning"></i> Shell Command'
-          url: /page/notes/shell/index.html      
-        - name: '<i class="fad fa-kerning"></i> Code Language'
-          url: /page/notes/code/index.html
 
 
 
@@ -240,7 +222,8 @@ site_footer:
 
 
 plugins:
-  fontawesome: /fonts/fontawesome/css/all.min.css
+  # fontawesome: /fonts/fontawesome/css/all.min.css
+  fontawesome: https://cdn.jsdelivr.net/gh/zucchiniy/common@master/fonts/fontawesome/css/all.min.css
   preload:
     enable: false
     service: instant_page
@@ -256,6 +239,7 @@ plugins:
   aplayer:
     enable: true
     server: tencent
+    type: playlist
     id: 7716882294
     message: true
   pjax:
@@ -291,26 +275,22 @@ rightmenu:
   reading:
     name: 阅读模式
     icon: fad fa-book-open EMERALD
-  foreverblog:
-    name: 十年之约
-    icon: fad fa-glass-cheers PETERRIVE
-    url: /page/foreverblog/
   friends:
     name: 我的朋友们
     icon: fad fa-flower-daffodil AMETHYST
-    url: /page/friends/
+    url: /friends/
   info:
     name: 留言版
     icon: fad fa-fish WETASPHALT
-    url: /page/info/
+    url: /info/
   text:
     name: 文章归档
     icon: fad fa-globe-asia CONCRETE
-    url: /navigation/archives/
+    url: /archives/
   about:
     name: 关于我
     icon: fad fa-gingerbread-man WISTERIA
-    url: /page/about/
+    url: /about/
 
 
 
