@@ -230,7 +230,7 @@ tag_plugins:
 site_footer:
   layout: [lic, inf, icp, cpy, me, icon]
   lic: '<div class="footerMax560"><p>博客内容遵循 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" data-pjax-state="">「署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)」</a> 协议</p></div>'
-  inf: '<div class="footerMax490">本站使用 <a href="https://github.com/volantis-x/hexo-theme-volantis" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Volantis</a> 作为主题 | 通过 <a href="https://hexo.io/zh-cn/" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Hexo</a> 渲染生成 | <span>由腾讯云 <a href="https://cloud.tencent.com/product/cdn" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">CDN</a> 分发</span></div>'
+  inf: '<div class="footerMax490">本站使用 <a href="https://github.com/volantis-x/hexo-theme-volantis" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Volantis</a> 作为主题 | 通过 <a href="https://hexo.io/zh-cn/" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Hexo</a> 渲染生成' 
   icp: '<div class="footerMax490">京 ICP 备 <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow" style="cursor:wait;">2020037911</a> 号 | 京公网安备 <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011402010923" rel="nofollow" target="_blank" style="cursor:wait;">11011402010923</a> 号</div>'
   cpy: '<div class="footerMax490">Copyright 2015 - 2021 zucchiniy . All Rights Reserved</div>'
   me: '<a href="/">夏南瓜的小站</a> '
@@ -272,7 +272,6 @@ plugins:
     position: fixed
     images:
       - https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/210616110426.jpeg
-
 
 
 
