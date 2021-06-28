@@ -31,9 +31,6 @@ navbar:
         - name: 友链
           icon: fad fa-stamp ALIZARIN
           url: /friends/   
-        - name: 留言
-          icon: fad fa-comment-alt-smile WETASPHALT
-          url: /info/
     - name: 音乐
       icon: fad fa-compact-disc WISTERIA
 
@@ -102,7 +99,7 @@ article:
       references:
         icon: fad fa-quote-left CONCRETE
       copyright:
-        enable: false
+        enable: true
 
 
 
@@ -110,10 +107,6 @@ article:
 comments:
   title: <i class='fad fa-comments POMEGRANATE'></i> 评论
   service: twikoo
-  valine:
-    placeholder: 人生在世，错别字在所难免，无需纠正。
-    appId: gqkw9h3C8yXm4WsJ3S5vBonP-gzGzoHsz
-    appKey: 2nwrlSMxijhI9x0v8JETCO9D
   disqus:
     shortname: inkss
   twikoo:
@@ -189,9 +182,6 @@ sidebar:
         - name: 建站历史
           icon: fad fa-leaf-heart POMEGRANATE
           url: /timeline/
-        - name: 站内留言
-          icon: fad fa-comment-alt-smile WISTERIA
-          url: /info/
         - name: 小伙伴们
           icon: fad fa-stamp CONCRETE
           url: /friends/
@@ -342,12 +332,3 @@ custom_css:
       fontfamily: 'fwzc, -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei'
     codefont:
       fontfamily: 'SFMono-Regular, Consolas, fwzc, "Liberation Mono", Menlo, Courier'
-
-
-
-analytics:
-  leancloud:
-    app_id:
-    app_key:
-
-
