@@ -1,6 +1,6 @@
 [submodule "themes/volantis"]
 	path = themes/volantis
 	url = https://ghproxy.com/https://github.com/ZucchiniY/volantis.git
-[submodule "sources"]
+[submodule "source"]
 	path = source
-	url = https://github.com/zucchiniy/markdown
+	url = git@github.com:ZucchiniY/markdown.git
