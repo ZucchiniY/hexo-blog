@@ -228,11 +228,10 @@ plugins:
     enable: true
   aplayer:
     enable: true
-    js:
-      aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js
     server: tencent
     type: playlist
     id: 8056580058
+    autoplay: true
     message: true
   pjax:
     cover: false
