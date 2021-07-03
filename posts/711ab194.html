@@ -32,7 +32,7 @@
   
 
   
-    <meta name="description" content="homebrew 安装配置和使用。">
+    <meta name="description" content="homebrew 安装配置和国内镜像源的选择。">
   
 
   <!-- feed -->
@@ -41,6 +41,14 @@
   
 
   <!-- import meta -->
+  
+    
+      <meta name="msapplication-TileColor" content="#ffffff">
+    
+      <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/browserconfig.xml">
+    
+      <meta name="theme-color" content="#ffffff">
+    
   
 
   <!-- link -->
@@ -2704,22 +2712,6 @@ article > p {
             
           
                     
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/info/
-                  
-                  
-                  
-                    id="info"
-                  >
-                  <i class='fad fa-comment-alt-smile WETASPHALT fa-fw'></i>留言
-                </a>
-                
-              </li>
-            
-          
-                    
                   </ul>
                 
               </li>
@@ -2741,7 +2733,7 @@ article > p {
   
     <meting-js
       theme='#1BCDFC'
-      autoplay='false'
+      autoplay='true'
       volume='0.7'
       loop='all'
       order='list'
@@ -2749,7 +2741,7 @@ article > p {
       list-max-height='320px'
       server='tencent'
       type='playlist'
-      id='7716882294'
+      id='8056580058'
       list-folded='true'>
     </meting-js>
   
@@ -2922,22 +2914,6 @@ article > p {
             
           
                     
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/info/
-                  
-                  
-                  
-                    id="info"
-                  >
-                  <i class='fad fa-comment-alt-smile WETASPHALT fa-fw'></i>留言
-                </a>
-                
-              </li>
-            
-          
-                    
                   </ul>
                 
               </li>
@@ -3077,7 +3053,7 @@ article > p {
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fad fa-keyboard PETERRIVE fa-fw" aria-hidden="true"></i>
-      <p>字数：928 字</p>
+      <p>字数：946 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -3142,19 +3118,18 @@ article > p {
 
 <h2 id="配置国内镜像"><a href="#配置国内镜像" class="headerlink" title="配置国内镜像"></a>配置国内镜像</h2><p>使用了一段时间的 <strong>Homebrew</strong> 之后，发现网络波动有点大，好多时间都是更新10多分钟，所以就想到了国内镜像问题。</p>
 <p>其实无论是什么内容，只要是需要更新的，就有两个优先选择的，一个是清华源，一个是科大源，这两个是最好用的镜像了。</p>
-<p>另外一个就是 NPM 的阿里源，这三个源都非常好用。</p>
 <p>对于我的使用，主要是两个，一个是 <strong>formula</strong> 索引，另一个是 <strong>bottles</strong> 。</p>
-<p><strong>formula</strong> 更新使用</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> brew 程序本身，Homebrew/Linuxbrew 相同</span></span><br><span class="line">git -C &quot;$(brew --repo)&quot; remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git</span><br><span class="line"></span><br><span class="line">git -C &quot;$(brew --repo homebrew/core)&quot; remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git</span><br><span class="line">git -C &quot;$(brew --repo homebrew/cask)&quot; remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask.git</span><br><span class="line">git -C &quot;$(brew --repo homebrew/cask-fonts)&quot; remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git</span><br><span class="line">git -C &quot;$(brew --repo homebrew/cask-drivers)&quot; remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-drivers.git</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更换后测试工作是否正常</span></span><br><span class="line">brew update</span><br></pre></td></tr></table></figure>
+<p>Homebrew 的 bottles 文件迁移到了 GitHub Packages ，镜像地址需要修改，但是使用的 <strong>清华源</strong> 和 <strong>腾讯源</strong> 都没有做更新，所以更新的时候报错 404 了，查了一下发现 <strong>科大源</strong> 已经更新了，所以就将所有的配置迁移到 <strong>科大源</strong> 之上。</p>
+<p>看了一下帮助文档，<code>homebrew-cask-fonts</code> 和 <code>homebrew-cask-drivers</code> 两个仓库在 <strong>科大源</strong> 中是没有的，所以还是使用 <strong>清华源</strong> 作为镜像。</p>
+<p><strong>formula</strong> 更新使用。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> brew 程序本身，Homebrew/Linuxbrew 相同</span></span><br><span class="line">git -C &quot;$(brew --repo)&quot; remote set-url origin https://mirrors.ustc.edu.cn/brew.git</span><br><span class="line"></span><br><span class="line">git -C &quot;$(brew --repo homebrew/core)&quot; remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git</span><br><span class="line">git -C &quot;$(brew --repo homebrew/cask)&quot; remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git</span><br><span class="line">git -C &quot;$(brew --repo homebrew/cask-fonts)&quot; remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git</span><br><span class="line">git -C &quot;$(brew --repo homebrew/cask-drivers)&quot; remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-drivers.git</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更换后测试工作是否正常</span></span><br><span class="line">brew update</span><br></pre></td></tr></table></figure>
 
-<p><strong>bottles</strong> 镜像则需要配置到环境变量中，我使用的是 zsh shell 所以配置到 <strong>.zshrc</strong> 文件中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles&#x27; &gt;&gt; ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p><strong>bottles</strong> 镜像则需要配置到环境变量中，我使用的是 zsh shell 所以配置到 <strong>.zprofile</strong> 文件中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo `export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles` &gt;&gt; ~/.zprofile </span><br><span class="line">source ~/.zprofile </span><br></pre></td></tr></table></figure>
 
-<p>如果你想临时使用的话，则需要在终端中输入 <code>export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles</code> ，当然如果你使用的是 bash shell 则可以将其配置到 <strong>.bash_profile</strong> 或者 <strong>.bashrc</strong> 文件中。</p>
+<p>如果你想临时使用的话，则需要在终端中输入 <code>export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles</code> ，当然如果你使用的是 bash shell 则可以将其配置到 <strong>.bash_profile</strong> 文件中。</p>
 <p>如果不再希望使用图内的镜像，也可以重置为 <em>GitHub</em> 镜像。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> brew 程序本身，Homebrew/Linuxbrew 相同</span></span><br><span class="line">git -C &quot;$(brew --repo)&quot; remote set-url origin https://github.com/Homebrew/brew.git</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 以下针对 mac OS 系统上的 Homebrew</span></span><br><span class="line">git -C &quot;$(brew --repo homebrew/core)&quot; remote set-url origin https://github.com/Homebrew/homebrew-core.git</span><br><span class="line">git -C &quot;$(brew --repo homebrew/cask)&quot; remote set-url origin https://github.com/Homebrew/homebrew-cask.git</span><br><span class="line">git -C &quot;$(brew --repo homebrew/cask-fonts)&quot; remote set-url origin https://github.com/Homebrew/homebrew-cask-fonts.git</span><br><span class="line">git -C &quot;$(brew --repo homebrew/cask-drivers)&quot; remote set-url origin https://github.com/Homebrew/homebrew-cask-drivers.git</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更换后测试工作是否正常</span></span><br><span class="line">brew update</span><br></pre></td></tr></table></figure>
-
-<h2 id="更新报错"><a href="#更新报错" class="headerlink" title="更新报错"></a>更新报错</h2><p>更新的时候，发现 homebrew 安装的时候，会报错 <strong>curl: (7) Failed to connect to raw.githubusercontent.com port 443: Operation timed out</strong> ，测试了一下，发现是因为 <code>curl</code> 这个命令有问题了，使用 homebrew 重新安装一下就可以。 <code>brew reinstall curl</code>。</p>
 
   
   
@@ -3162,6 +3137,21 @@ article > p {
     <div class='footer'>
       
       
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.zucchiniy.com/posts/711ab194.html>https://blog.zucchiniy.com/posts/711ab194.html</a></p>
+              
+            
+          </blockquote>
+        </div>
       
       
     </div>
@@ -3194,10 +3184,10 @@ article > p {
         
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-27T23:29:36+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-02T23:43:09+08:00">
   <a class='notlink'>
     <i class="fad fa-edit GREENSEA fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年6月27日</p>
+    <p>更新于：2021年7月2日</p>
   </a>
 </div>
 
@@ -3284,7 +3274,7 @@ article > p {
 
   <div class='content'>
     
-      <p>整修中...</p>
+      <p>小破站迁移中...</p>
     
   </div>
 </section>
@@ -3307,7 +3297,7 @@ article > p {
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#homebrew-%E5%AE%89%E8%A3%85"><span class="toc-text">homebrew 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E5%90%AF%E7%94%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">后台启用服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F"><span class="toc-text">配置国内镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%8A%A5%E9%94%99"><span class="toc-text">更新报错</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#homebrew-%E5%AE%89%E8%A3%85"><span class="toc-text">homebrew 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E5%90%AF%E7%94%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">后台启用服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F"><span class="toc-text">配置国内镜像</span></a></li></ol>
     </div>
   </section>
 
@@ -3353,7 +3343,7 @@ article > p {
     
       
         
-          <div><div class="footerMax490">本站使用 <a href="https://github.com/volantis-x/hexo-theme-volantis" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Volantis</a> 作为主题 | 通过 <a href="https://hexo.io/zh-cn/" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Hexo</a> 渲染生成 | <span>由腾讯云 <a href="https://cloud.tencent.com/product/cdn" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">CDN</a> 分发</span></div></div>
+          <div><div class="footerMax490">本站使用 <a href="https://github.com/volantis-x/hexo-theme-volantis" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Volantis</a> 作为主题 | 通过 <a href="https://hexo.io/zh-cn/" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Hexo</a> 渲染生成</div>
         
       
     
@@ -3515,7 +3505,7 @@ article > p {
 
 <script>
   
-  volantis.css("/fonts/fontawesome/css/all.min.css");
+  volantis.css("https://cdn.jsdelivr.net/gh/zucchiniy/common@master/fonts/fontawesome/css/all.min.css");
   
   
   
@@ -3617,12 +3607,12 @@ article > p {
         
           
     <li class="menuLoad-Content">
-      <a class='vlts-menu fix-cursor-default' href=/page/info/
+      <a class='vlts-menu fix-cursor-default' href=/info/
         
         
         
         
-          id="pageinfo"
+          id="info"
         
       >
         <i class='fad fa-fish WETASPHALT fa-fw'></i> 留言版
@@ -3632,31 +3622,16 @@ article > p {
         
       
         
-          
-    <li class="menuLoad-Content">
-      <a class='vlts-menu fix-cursor-default' href=/page/foreverblog/
-        
-        
-        
-        
-          id="pageforeverblog"
-        
-      >
-        <i class='fad fa-glass-cheers PETERRIVE fa-fw'></i> 十年之约
-      </a>
-    </li>
-  
-        
       
         
           
     <li class="menuLoad-Content">
-      <a class='vlts-menu fix-cursor-default' href=/page/friends/
+      <a class='vlts-menu fix-cursor-default' href=/friends/
         
         
         
         
-          id="pagefriends"
+          id="friends"
         
       >
         <i class='fad fa-flower-daffodil AMETHYST fa-fw'></i> 我的朋友们
@@ -3668,12 +3643,12 @@ article > p {
         
           
     <li class="menuLoad-Content">
-      <a class='vlts-menu fix-cursor-default' href=/navigation/archives/
+      <a class='vlts-menu fix-cursor-default' href=/archives/
         
         
         
         
-          id="navigationarchives"
+          id="archives"
         
       >
         <i class='fad fa-globe-asia CONCRETE fa-fw'></i> 文章归档
@@ -3685,12 +3660,12 @@ article > p {
         
           
     <li class="menuLoad-Content">
-      <a class='vlts-menu fix-cursor-default' href=/page/about/
+      <a class='vlts-menu fix-cursor-default' href=/about/
         
         
         
         
-          id="pageabout"
+          id="about"
         
       >
         <i class='fad fa-gingerbread-man WISTERIA fa-fw'></i> 关于我
@@ -3930,7 +3905,7 @@ volantis.pjax.send(()=>{
 
   <script>
     volantis.APlayerController = {};
-    volantis.APlayerController.id = '7716882294';  // 设定全局音乐播放ID
+    volantis.APlayerController.id = '8056580058';  // 设定全局音乐播放ID
     volantis.APlayerController.volume = '0.7';
     volantis.css("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css");
     // APlayer 需要在  MetingJS 之前加载
@@ -4073,6 +4048,215 @@ function setSearchService() {
 
 
 
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://blog.zucchiniy.com' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://blog.zucchiniy.com' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://blog.zucchiniy.com' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
 
 
 
