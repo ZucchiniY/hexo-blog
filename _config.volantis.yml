@@ -43,7 +43,7 @@ cover:
     home: true
     archive: false
     others: false
-  background: https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/210616110426.jpeg
+  background: https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/puffin.jpeg
   title: 夏南瓜的小站
   search: 知无不言
   features:
@@ -246,7 +246,7 @@ plugins:
     enable: true
     position: fixed
     images:
-      - https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/210616110426.jpeg
+      - https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/WechatIMG5.jpeg
 
 
 
@@ -270,10 +270,6 @@ rightmenu:
     name: 我的朋友们
     icon: fad fa-flower-daffodil AMETHYST
     url: /friends/
-  info:
-    name: 留言版
-    icon: fad fa-fish WETASPHALT
-    url: /info/
   text:
     name: 文章归档
     icon: fad fa-globe-asia CONCRETE
