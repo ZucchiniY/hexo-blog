@@ -10,8 +10,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -28,9 +26,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：生活笔记 - 夏南瓜的小站</title>
+  <title>利用 find 命令查找并删除文件 - 夏南瓜的小站</title>
+  
+    <meta name="keywords" content="find,delete">
   
 
+  
+    <meta name="description" content="一条命令删除目录下的文件。">
   
 
   <!-- feed -->
@@ -2937,7 +2939,7 @@ article > p {
   
     
       <!-- see: /layout/_partial/scripts/coverCtrl.ejs -->
-        <div id="none" class='cover-wrapper  search' style="display: none;">
+        <div id="none" class='cover-wrapper post search' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -3020,78 +3022,182 @@ article > p {
         <div class="body-wrapper" id="pjax-container">
           
 
-
 <div id="l_main" class=''>
+  <article class=" article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        利用 find 命令查找并删除文件
+      </h1>
+      <div class='new-meta-box'>
         
           
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/zucchiniy/common@master/avatar/lvzai.jpg">
+    <p>夏南瓜</p>
+  </a>
+</div>
+
+          
         
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/posts/d554c002.html">
-        因为生活感到了焦虑
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>前几天一个同事说，感觉生活没什么目标，人生很灰暗。最近几天，自己也有了这种感觉。</p>
-    
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fad fa-keyboard PETERRIVE fa-fw" aria-hidden="true"></i>
+      <p>字数：133 字</p>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='hidden'>
-      <div>
-        
-        <time>2021-03-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/">生活笔记</a>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fad fa-hourglass-half BELIZEHOLE fa-fw" aria-hidden="true"></i>
+      <p>时长：1 分钟</p>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  
+  <h2 id="单纯删除文件"><a href="#单纯删除文件" class="headerlink" title="单纯删除文件"></a>单纯删除文件</h2><p>利用 find 命令查找所有的文件并将其删除。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">&#x27;*.DS_Store&#x27;</span> -<span class="built_in">type</span> f -delete</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除-Git-项目中的内容"><a href="#删除-Git-项目中的内容" class="headerlink" title="删除 Git 项目中的内容"></a>删除 Git 项目中的内容</h2><p>删除项目中的所有 <strong>.DS_Store</strong> 。</p>
+<p>先从项目中将所有的 <strong>.DS_Store</strong> 查找出来，然后利用命令将文件从 Git 管理中删除。 </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch</span><br></pre></td></tr></table></figure>
+
+<p>然后将 <em>.DS_Store</em> 加入到 <em>.gitignore</em> 中。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> .DS_Store &gt;&gt; ~/.gitignore</span><br></pre></td></tr></table></figure>
+
+<p>最后再把删除后的版本库提交到远程就可以了。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add --all</span><br><span class="line">git commit -m <span class="string">&#x27;.DS_Store banished!&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <!-- <a class='readmore' href='/posts/d554c002.html'>
-            <i class="fad fa-books fa-fw" aria-hidden="true" title="Read Me"></i> 阅读更多
-          </a> -->
-          <a class="link-fx-1 color-contrast-higher" href="/posts/d554c002.html">
-            <span><i class="fad fa-books fa-fw" aria-hidden="true" title="Read Me"></i> 阅读更多</span>
-            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"/><line x1="10" y1="18" x2="16" y2="12"/><line x1="16" y1="12" x2="22" y2="18" /></g></svg>
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.zucchiniy.com/posts/215ae710.html>https://blog.zucchiniy.com/posts/215ae710.html</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
-</div>
 
-          </div>
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fad fa-folder-open EMERALD fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83/">工具环境</a><span class="sep"></span><a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83/Linux/">Linux</a>
+    </a>
+  </div>
+
+
         
       
-    
-  </section>
+        
+          
   
-    
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/find/" rel="nofollow"><i class="fad fa-hashtag WETASPHALT fa-fw" aria-hidden="true"></i><p>find</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/delete/" rel="nofollow"><i class="fad fa-hashtag WETASPHALT fa-fw" aria-hidden="true"></i><p>delete</p></a></div>
 
 
-    
+        
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-04T20:56:09+08:00">
+  <a class='notlink'>
+    <i class="fad fa-edit GREENSEA fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年7月4日</p>
+  </a>
+</div>
+
+        
+      
+        
+          <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fad fa-calendar-alt TURQUOISE fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年7月4日</p>
+  </a>
+</div>
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/posts/5ea56af6.html'>
+          <p class='title'>清理 Git 项目的大小<i class="fad fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>起因一直使用 Emacs 作为自己的编辑器，在单位电脑进行下载配置的时候发现项目的大小竟然已经到了 67M ，在下载过程中太长了，就看了一下目录，主要是因为之前在使用 lsp-mode 和 ri...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fad fa-comments POMEGRANATE'></i> 评论</p>
+    
+    <div id="twikoo_container">
+  <i class="fad fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side'>
   
@@ -3121,219 +3227,22 @@ article > p {
     
     
 
-<section class="widget text shadow desktop">
-  
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
   <header>
     
-      <i class="fad fa-praying-hands ASBESTOS fa-fw" aria-hidden="true"></i><span class='name'>更新日志</span>
+      <i class="fad fa-list ASBESTOS fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-  <div class='content'>
-    
-      <ol>
-<li>文章迁移到 Hexo</li>
-</ol>
-
-    
-      <ol start="2">
-<li>重新配置主题样式</li>
-</ol>
-
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget grid shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fad fa-map-signs ASBESTOS fa-fw" aria-hidden="true"></i><span class='name'>站内导航</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="grid navigation fixed">
-      
-        <a class="flat-box" href="/notes/"
-          
-          
-          id="notes">
-          
-            <i class="fad fa-books GREENSEA fa-fw" aria-hidden="true"></i>
-          
-          文档笔记
-        </a>
-      
-        <a class="flat-box" href="/timeline/"
-          
-          
-          id="timeline">
-          
-            <i class="fad fa-leaf-heart POMEGRANATE fa-fw" aria-hidden="true"></i>
-          
-          建站历史
-        </a>
-      
-        <a class="flat-box" href="/friends/"
-          
-          
-          id="friends">
-          
-            <i class="fad fa-stamp CONCRETE fa-fw" aria-hidden="true"></i>
-          
-          小伙伴们
-        </a>
-      
-        <a class="flat-box" href="/atom.xml"
-          
-          
-          id="atomxml">
-          
-            <i class="fad fa-rss SUNFLOWER fa-fw" aria-hidden="true"></i>
-          
-          RSS 订阅
-        </a>
-      
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E7%BA%AF%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-text">单纯删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4-Git-%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-text">删除 Git 项目中的内容</span></a></li></ol>
     </div>
-  </div>
-</section>
+  </section>
 
-  
-
-  
-    
-    
-
-<section class="widget shadow desktop">
-  
-  <header>
-    
-      <i class="fad fa-award ASBESTOS fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>98 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2015/12/23'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>59.8k </div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="lc-uv"><span id='number'><i class="fad fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="lc-sv"><span id='number'><i class="fad fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Sat Jul 03 2021 21:59:00 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-07-03 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-07-03 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
 
   
 
@@ -3341,13 +3250,14 @@ article > p {
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="利用 find 命令查找并删除文件";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   //  see: /layout/_partial/scripts/coverCtrl.ejs
@@ -3554,7 +3464,7 @@ article > p {
   
   
       <script>
-        var imgs=["https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/210616110426.jpeg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/WechatIMG5.jpeg"];
         
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -3636,21 +3546,6 @@ article > p {
           <hr class="menuLoad-Content">
         
       
-        
-          
-    <li class="menuLoad-Content">
-      <a class='vlts-menu fix-cursor-default' href=/info/
-        
-        
-        
-        
-          id="info"
-        
-      >
-        <i class='fad fa-fish WETASPHALT fa-fw'></i> 留言版
-      </a>
-    </li>
-  
         
       
         
