@@ -25,9 +25,6 @@ navbar:
         - name: 关于
           icon: fad fa-drafting-compass SUNFLOWER
           url: /about/
-        - name: 笔记
-          icon: fad fa-books CARROT
-          url: /notes/  
         - name: 友链
           icon: fad fa-stamp ALIZARIN
           url: /friends/   
@@ -47,14 +44,10 @@ cover:
   title: 夏南瓜的小站
   search: 知无不言
   features:
-    - name: 文档
-      url: /notes/
     - name: 关于
       url: /about/
     - name: 友链
       url: /friends/
-    - name: 留言
-      url: /info/
     - name: 标签
       url: /tags/
     - name: 归档
@@ -101,20 +94,12 @@ article:
       copyright:
         enable: true
 
-
-
-
 comments:
   title: <i class='fad fa-comments POMEGRANATE'></i> 评论
   service: twikoo
-  disqus:
-    shortname: inkss
   twikoo:
     js: https://cdn.jsdelivr.net/npm/twikoo@1.4.0 # 建议锁定版本
     envId: https://twikoo-fre4i27h0-zucchiniy.vercel.app
-
-
-
 
 sidebar:
   for_page: [notice, updateList, navigation, webinfo]
@@ -157,7 +142,7 @@ sidebar:
         icon: fad fa-user-robot ASBESTOS
         title: 公告信息
       content:
-        - '<p>小破站迁移中...</p>'
+        - '<p>小破站迁移完成，开启更新模式...</p>'
     updateList:
       class: text
       display: [desktop]
@@ -165,8 +150,9 @@ sidebar:
         icon: fad fa-praying-hands ASBESTOS
         title: 更新日志
       content:
-        - 1. 文章迁移到 Hexo
-        - 2. 重新配置主题样式
+        - <p>1. 文章迁移到 Hexo</p>
+        - <p>2. 重新配置主题样式</p>
+        - <p>3. 增加 twikoo 配置</p>
     # 自定义 站内导航    
     navigation:
       class: grid
@@ -246,7 +232,7 @@ plugins:
     enable: true
     position: fixed
     images:
-      - https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/WechatIMG5.jpeg
+      - https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/puffin.jpeg
 
 
 
