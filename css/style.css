@@ -2848,6 +2848,7 @@ div#rightmenu-wrapper {
 ul.list-v.rightmenu {
   display: block;
   max-width: 240px;
+  min-width: 170px;
   overflow: hidden;
 }
 ul.list-v.rightmenu.left {
@@ -3840,7 +3841,7 @@ svg.loading {
   }
 }
 #safearea {
-  margin: 16px 16px 0;
+  margin: 0;
 }
 #l_body {
   position: relative;
@@ -3902,7 +3903,7 @@ svg.loading {
   }
 }
 #l_main {
-  width: calc(100% - 1 * 240px);
+  width: 75%;
   padding-right: 16px;
   float: left;
 }
@@ -4225,6 +4226,7 @@ svg.loading {
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
+  padding: 1rem 1rem;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
@@ -4653,7 +4655,7 @@ img.lazyload:not(.placeholder).loaded {
   opacity: 1;
 }
 #l_side {
-  width: 240px;
+  width: 25%;
   float: right;
   position: relative;
   display: flex;
@@ -5603,8 +5605,10 @@ div.note.poo::before {
   content: '\f2fe';
 }
 #BKG {
-  background-image: url("/img/bkg/wallhaven-1k13pv.jpg");
+  filter: brightness(0.9);
+  background-image: url("/img/bkg/wallhaven-3z3y19.png");
   background-size: cover;
+  background-position: center;
   z-index: -20;
   position: fixed;
   top: 0;
@@ -5621,6 +5625,12 @@ div.note.poo::before {
   overflow: hidden;
   font-weight: 800 !important;
   font-family: 'sxls' !important;
+}
+@media screen and (max-width: 500px) {
+  .fix-header-title {
+    margin: unset !important;
+    font-size: 1rem !important;
+  }
 }
 #valine_container .vwrap,
 #valine_container .vcards .vh,

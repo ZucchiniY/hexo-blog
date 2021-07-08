@@ -22,17 +22,21 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="preload" href="/css/style.css" as="style">
+  <!-- 谷歌认证 百度认证 -->
+  <meta name="baidu-site-verification" content="code-RnP7kAVr8U" />
+  <meta name="baidu_union_verify" content="621bf14a06bf40bf54d776ef1cb67a9a">
+  <meta name="google-site-verification" content="1zjaBYiW-491c1GSe5DRpRwZlop9RpQet7Kx8WYW1sY" />
 
 
   <!-- 页面元数据 -->
   
-  <title>Python 基础配置 - 夏南瓜的小站</title>
+  <title>使用 Conda 管理 Python 环境 - 夏南瓜的小站</title>
   
     <meta name="keywords" content="conda">
   
 
   
-    <meta name="description" content="国内镜像和中文乱码解决。">
+    <meta name="description" content="如何使用 conda 管理包和开发环境，以及国内镜像和中文乱码解决。">
   
 
   <!-- feed -->
@@ -1971,27 +1975,32 @@ article > p {
 }
 @media screen and (max-width: 500px) {
   #safearea {
-    margin: 16px 0 0 !important;
-    box-shadow: none !important;
+    margin: 0;
+    box-shadow: none;
+  }
+  #safearea .body-wrapper {
+    padding: 0;
   }
   #safearea #l_main article#comments,
   #safearea #l_main article#friends,
   #safearea #l_main article#post,
   #safearea #l_main article#page,
   #safearea #l_main article#arc {
-    border-radius: 0 !important;
-    margin-top: -16px !important;
+    border-radius: 0;
   }
   #safearea #l_main article#cat,
   #safearea #l_main article#tag {
-    margin: -16px -16px 0 !important;
-    border-radius: 0 !important;
+    margin: 0;
+    border-radius: 0;
   }
   #safearea #l_main .post-wrapper {
-    margin: 0 16px !important;
+    margin: 0 0 16px;
+  }
+  #safearea #l_main .post-wrapper .post {
+    border-radius: 0;
   }
   #safearea #l_side .widget.mobile {
-    border-radius: 0 !important;
+    border-radius: 0;
   }
 }
 .iconfont {
@@ -2245,9 +2254,6 @@ article > p {
   :root:not([data-user-color-scheme]) .post_read {
     background-color: #282c34 !important;
   }
-  :root:not([data-user-color-scheme]) #BKG {
-    background-image: url("/img/bkg/wallhaven-ey3exw.png") !important;
-  }
   :root:not([data-user-color-scheme]) #l_main .post,
   :root:not([data-user-color-scheme]) #l_side .widget,
   :root:not([data-user-color-scheme]) #rightmenu-content {
@@ -2482,9 +2488,6 @@ article > p {
 [data-user-color-scheme='dark'] .post_read {
   background-color: #282c34 !important;
 }
-[data-user-color-scheme='dark'] #BKG {
-  background-image: url("/img/bkg/wallhaven-ey3exw.png") !important;
-}
 [data-user-color-scheme='dark'] #l_main .post,
 [data-user-color-scheme='dark'] #l_side .widget,
 [data-user-color-scheme='dark'] #rightmenu-content {
@@ -2683,22 +2686,6 @@ article > p {
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/notes/
-                  
-                  
-                  
-                    id="notes"
-                  >
-                  <i class='fad fa-books CARROT fa-fw'></i>笔记
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
                   
                   
@@ -2885,22 +2872,6 @@ article > p {
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/notes/
-                  
-                  
-                  
-                    id="notes"
-                  >
-                  <i class='fad fa-books CARROT fa-fw'></i>笔记
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
                   
                   
@@ -2964,13 +2935,6 @@ article > p {
       <div class='list-h'>
         
           
-            <a href="/notes/"
-              
-              
-              id="notes">
-              <p>文档</p>
-            </a>
-          
             <a href="/about/"
               
               
@@ -2983,13 +2947,6 @@ article > p {
               
               id="friends">
               <p>友链</p>
-            </a>
-          
-            <a href="/info/"
-              
-              
-              id="info">
-              <p>留言</p>
             </a>
           
             <a href="/tags/"
@@ -3012,7 +2969,7 @@ article > p {
   </div>
 </div>
 
-          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fad fa-ship scroll-down-effects"></i></div>
         </div>
     
   
@@ -3033,7 +2990,7 @@ article > p {
     
     
       <h1 class="title">
-        Python 基础配置
+        使用 Conda 管理 Python 环境
       </h1>
       <div class='new-meta-box'>
         
@@ -3053,7 +3010,7 @@ article > p {
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fad fa-keyboard PETERRIVE fa-fw" aria-hidden="true"></i>
-      <p>字数：516 字</p>
+      <p>字数：631 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -3083,17 +3040,33 @@ article > p {
 
 <h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">conda list #查看所有的包</span><br><span class="line">conda install package_name #安装包</span><br><span class="line">conda remove package_name #移除包</span><br><span class="line">conda update package_name #升级包</span><br><span class="line">conda search search_term #模糊查询包名</span><br><span class="line">conda update conda #更新 conda 本身</span><br><span class="line">conda update anaconda #更新 anaconda</span><br><span class="line">conda update python #更新 Python</span><br></pre></td></tr></table></figure>
 
+<h2 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h2><figure class="highlight sh"><figcaption><span>查看环境</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><figcaption><span>创建环境</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n &lt;env_name&gt; python=&lt;python_version&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><figcaption><span>进行环境</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate &lt;env_name&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><figcaption><span>导出环境配置</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env <span class="built_in">export</span> &gt; environment.yml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><figcaption><span>依据 yml 文件创建环境</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env create -f environment.yml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><figcaption><span>依据 yml 更新环境</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env update -f environment.yml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><figcaption><span>复制环境</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n &lt;env_name_new&gt; --<span class="built_in">clone</span> &lt;env_name&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><figcaption><span>删除环境</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n &lt;env_name&gt; --all</span><br></pre></td></tr></table></figure>
+
 <h2 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h2><p>使用 Anaconda 进行数据处理后生成图片的时候，如果不指定对应字体会导致中文乱码，可以通过下面的方案进行解决。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> mpl</span><br><span class="line"><span class="comment"># 指定默认字体：解决plot不能显示中文问题</span></span><br><span class="line">mpl.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;Microsoft YaHei&#x27;</span>]</span><br><span class="line"><span class="comment"># 解决保存图像是负号&#x27;-&#x27;显示为方块的问题</span></span><br><span class="line">mpl.raParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Mac-下查找字体"><a href="#Mac-下查找字体" class="headerlink" title="Mac 下查找字体"></a>Mac 下查找字体</h2><p>可以利用 <code>font_manager</code> 将所有 matplotlib 能使用的字体打印出来。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> font_manager</span><br><span class="line">a = <span class="built_in">sorted</span>([f.name <span class="keyword">for</span> f <span class="keyword">in</span> font_manager.fontManager.ttflist])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><figcaption><span>查找字体</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> font_manager</span><br><span class="line">a = <span class="built_in">sorted</span>([f.name <span class="keyword">for</span> f <span class="keyword">in</span> font_manager.fontManager.ttflist])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
 
 <p>如果 matplotlib 中无中文字体，则需要下载对应的 tff 字体只在到 matplotlib/mpl-data/fonts/tff 中，然后使用 font_manager 重新编译一下。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.font_manager <span class="keyword">import</span> _rebuild</span><br><span class="line"></span><br><span class="line">_rebuild()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><figcaption><span>重新编译字符管理</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.font_manager <span class="keyword">import</span> _rebuild</span><br><span class="line"></span><br><span class="line">_rebuild()</span><br></pre></td></tr></table></figure>
 
 <p>之后就可以利用上面的方法，将使用新的字体了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;STFangsong&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><figcaption><span>设置字体</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;STFangsong&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
 
   
   
@@ -3148,10 +3121,10 @@ article > p {
         
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-02T23:43:09+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-08T09:10:48+08:00">
   <a class='notlink'>
     <i class="fad fa-edit GREENSEA fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年7月2日</p>
+    <p>更新于：2021年7月8日</p>
   </a>
 </div>
 
@@ -3227,7 +3200,7 @@ article > p {
 
   <div class='content'>
     
-      <p>小破站迁移中...</p>
+      <p>小破站迁移完成，开启更新模式...</p>
     
   </div>
 </section>
@@ -3250,7 +3223,7 @@ article > p {
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BD%E5%86%85%E6%BA%90%E9%95%9C%E5%83%8F"><span class="toc-text">国内源镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86"><span class="toc-text">包管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81"><span class="toc-text">中文乱码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac-%E4%B8%8B%E6%9F%A5%E6%89%BE%E5%AD%97%E4%BD%93"><span class="toc-text">Mac 下查找字体</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BD%E5%86%85%E6%BA%90%E9%95%9C%E5%83%8F"><span class="toc-text">国内源镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86"><span class="toc-text">包管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86"><span class="toc-text">环境管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81"><span class="toc-text">中文乱码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac-%E4%B8%8B%E6%9F%A5%E6%89%BE%E5%AD%97%E4%BD%93"><span class="toc-text">Mac 下查找字体</span></a></li></ol>
     </div>
   </section>
 
@@ -3268,7 +3241,7 @@ article > p {
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Python 基础配置";
+  pdata.postTitle="使用 Conda 管理 Python 环境";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   //  see: /layout/_partial/scripts/coverCtrl.ejs
@@ -3326,6 +3299,61 @@ article > p {
         
       
     
+    <!-- 谷歌广告 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- blog -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2846657491221113"
+         data-ad-slot="9079877850"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <!-- 百度广告-->
+    <!-- PC -->
+    <div class="_54tydb5cszk"></div>
+    <script type="text/javascript">
+    (window.slotbydup = window.slotbydup || []).push({
+        id: "u6300133",
+        container: "_54tydb5cszk",
+        async: true
+    });
+    </script>
+    <!-- wap -->
+    <div class="_dqr8o6yclye"></div>
+    <script type="text/javascript">
+    (window.slotbydup = window.slotbydup || []).push({
+        id: "u6300134",
+        container: "_dqr8o6yclye",
+        async: true
+    });
+    </script>
+    <script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/cm.js" async="async" defer="defer">
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?31557380932f914656639e3f499fca3c";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <!-- 谷歌分析 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151174326-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-151174326-1');
+    </script>
   </footer>
 
 
@@ -3475,7 +3503,7 @@ article > p {
   
   
       <script>
-        var imgs=["https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/WechatIMG5.jpeg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/puffin.jpeg"];
         
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -3918,7 +3946,7 @@ volantis.pjax.send(()=>{
 
   <script>
   function load_twikoo() {
-	  volantis.js("https://cdn.jsdelivr.net/npm/twikoo@1.3.0", pjax_twikoo)
+	  volantis.js("https://cdn.jsdelivr.net/npm/twikoo@1.4.0", pjax_twikoo)
   }
   function pjax_twikoo() {
     if(!document.querySelectorAll("#twikoo_container")[0])return;
@@ -3927,7 +3955,7 @@ volantis.pjax.send(()=>{
       let defaultPath = '';
       path = defaultPath || "decodeURI(window.location.pathname)"; //神奇的pathname
     }
-    twikoo.init(Object.assign({"js":"https://cdn.jsdelivr.net/npm/twikoo@1.3.0","path":null,"envId":"twikoo-web-4g84uta0261cb889"}, {
+    twikoo.init(Object.assign({"js":"https://cdn.jsdelivr.net/npm/twikoo@1.4.0","path":null,"envId":"https://twikoo-fre4i27h0-zucchiniy.vercel.app"}, {
 	  el: '#twikoo_container',
 	  path: path,
     }))

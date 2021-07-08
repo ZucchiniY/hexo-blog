@@ -24,6 +24,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="preload" href="/css/style.css" as="style">
+  <!-- 谷歌认证 百度认证 -->
+  <meta name="baidu-site-verification" content="code-RnP7kAVr8U" />
+  <meta name="baidu_union_verify" content="621bf14a06bf40bf54d776ef1cb67a9a">
+  <meta name="google-site-verification" content="1zjaBYiW-491c1GSe5DRpRwZlop9RpQet7Kx8WYW1sY" />
 
 
   <!-- 页面元数据 -->
@@ -1969,27 +1973,32 @@ article > p {
 }
 @media screen and (max-width: 500px) {
   #safearea {
-    margin: 16px 0 0 !important;
-    box-shadow: none !important;
+    margin: 0;
+    box-shadow: none;
+  }
+  #safearea .body-wrapper {
+    padding: 0;
   }
   #safearea #l_main article#comments,
   #safearea #l_main article#friends,
   #safearea #l_main article#post,
   #safearea #l_main article#page,
   #safearea #l_main article#arc {
-    border-radius: 0 !important;
-    margin-top: -16px !important;
+    border-radius: 0;
   }
   #safearea #l_main article#cat,
   #safearea #l_main article#tag {
-    margin: -16px -16px 0 !important;
-    border-radius: 0 !important;
+    margin: 0;
+    border-radius: 0;
   }
   #safearea #l_main .post-wrapper {
-    margin: 0 16px !important;
+    margin: 0 0 16px;
+  }
+  #safearea #l_main .post-wrapper .post {
+    border-radius: 0;
   }
   #safearea #l_side .widget.mobile {
-    border-radius: 0 !important;
+    border-radius: 0;
   }
 }
 .iconfont {
@@ -2243,9 +2252,6 @@ article > p {
   :root:not([data-user-color-scheme]) .post_read {
     background-color: #282c34 !important;
   }
-  :root:not([data-user-color-scheme]) #BKG {
-    background-image: url("/img/bkg/wallhaven-ey3exw.png") !important;
-  }
   :root:not([data-user-color-scheme]) #l_main .post,
   :root:not([data-user-color-scheme]) #l_side .widget,
   :root:not([data-user-color-scheme]) #rightmenu-content {
@@ -2480,9 +2486,6 @@ article > p {
 [data-user-color-scheme='dark'] .post_read {
   background-color: #282c34 !important;
 }
-[data-user-color-scheme='dark'] #BKG {
-  background-image: url("/img/bkg/wallhaven-ey3exw.png") !important;
-}
 [data-user-color-scheme='dark'] #l_main .post,
 [data-user-color-scheme='dark'] #l_side .widget,
 [data-user-color-scheme='dark'] #rightmenu-content {
@@ -2681,22 +2684,6 @@ article > p {
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/notes/
-                  
-                  
-                  
-                    id="notes"
-                  >
-                  <i class='fad fa-books CARROT fa-fw'></i>笔记
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
                   
                   
@@ -2883,22 +2870,6 @@ article > p {
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/notes/
-                  
-                  
-                  
-                    id="notes"
-                  >
-                  <i class='fad fa-books CARROT fa-fw'></i>笔记
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
                   
                   
@@ -2962,13 +2933,6 @@ article > p {
       <div class='list-h'>
         
           
-            <a href="/notes/"
-              
-              
-              id="notes">
-              <p>文档</p>
-            </a>
-          
             <a href="/about/"
               
               
@@ -2981,13 +2945,6 @@ article > p {
               
               id="friends">
               <p>友链</p>
-            </a>
-          
-            <a href="/info/"
-              
-              
-              id="info">
-              <p>留言</p>
             </a>
           
             <a href="/tags/"
@@ -3010,7 +2967,7 @@ article > p {
   </div>
 </div>
 
-          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fad fa-ship scroll-down-effects"></i></div>
         </div>
     
   
@@ -3550,7 +3507,6 @@ article > p {
   </section>
   
     
-      <br>
       <div class="prev-next">
         
         <p class="current">
@@ -3587,7 +3543,7 @@ article > p {
 
   <div class='content'>
     
-      <p>小破站迁移中...</p>
+      <p>小破站迁移完成，开启更新模式...</p>
     
   </div>
 </section>
@@ -3609,15 +3565,11 @@ article > p {
 
   <div class='content'>
     
-      <ol>
-<li>文章迁移到 Hexo</li>
-</ol>
-
+      <p>1. 文章迁移到 Hexo</p>
     
-      <ol start="2">
-<li>重新配置主题样式</li>
-</ol>
-
+      <p>2. 重新配置主题样式</p>
+    
+      <p>3. 增加 twikoo 配置</p>
     
   </div>
 </section>
@@ -3704,7 +3656,7 @@ article > p {
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>99 篇</div>
+          <div>104 篇</div>
         </div>
       
 
@@ -3726,7 +3678,7 @@ article > p {
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>60k </div>
+          <div>63k </div>
         </div>
       
 
@@ -3752,8 +3704,8 @@ article > p {
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sun Jul 04 2021 21:54:21 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-07-04 日</div>
+            <div id="last-update" style="display: none;">Thu Jul 08 2021 21:52:31 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-07-08 日</div>
           
         </div>
         
@@ -3803,7 +3755,7 @@ article > p {
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-07-04 日';
+            document.getElementById('last-update-show').innerHTML = '2021-07-08 日';
           }
         </script>
         
@@ -3882,6 +3834,61 @@ article > p {
         
       
     
+    <!-- 谷歌广告 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- blog -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2846657491221113"
+         data-ad-slot="9079877850"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <!-- 百度广告-->
+    <!-- PC -->
+    <div class="_54tydb5cszk"></div>
+    <script type="text/javascript">
+    (window.slotbydup = window.slotbydup || []).push({
+        id: "u6300133",
+        container: "_54tydb5cszk",
+        async: true
+    });
+    </script>
+    <!-- wap -->
+    <div class="_dqr8o6yclye"></div>
+    <script type="text/javascript">
+    (window.slotbydup = window.slotbydup || []).push({
+        id: "u6300134",
+        container: "_dqr8o6yclye",
+        async: true
+    });
+    </script>
+    <script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/cm.js" async="async" defer="defer">
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?31557380932f914656639e3f499fca3c";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <!-- 谷歌分析 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151174326-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-151174326-1');
+    </script>
   </footer>
 
 
@@ -4031,7 +4038,7 @@ article > p {
   
   
       <script>
-        var imgs=["https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/WechatIMG5.jpeg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/zucchiniy/common@master/cover/puffin.jpeg"];
         
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -4474,7 +4481,7 @@ volantis.pjax.send(()=>{
 
   <script>
   function load_twikoo() {
-	  volantis.js("https://cdn.jsdelivr.net/npm/twikoo@1.3.0", pjax_twikoo)
+	  volantis.js("https://cdn.jsdelivr.net/npm/twikoo@1.4.0", pjax_twikoo)
   }
   function pjax_twikoo() {
     if(!document.querySelectorAll("#twikoo_container")[0])return;
@@ -4483,7 +4490,7 @@ volantis.pjax.send(()=>{
       let defaultPath = '';
       path = defaultPath || "decodeURI(window.location.pathname)"; //神奇的pathname
     }
-    twikoo.init(Object.assign({"js":"https://cdn.jsdelivr.net/npm/twikoo@1.3.0","path":null,"envId":"twikoo-web-4g84uta0261cb889"}, {
+    twikoo.init(Object.assign({"js":"https://cdn.jsdelivr.net/npm/twikoo@1.4.0","path":null,"envId":"https://twikoo-fre4i27h0-zucchiniy.vercel.app"}, {
 	  el: '#twikoo_container',
 	  path: path,
     }))
