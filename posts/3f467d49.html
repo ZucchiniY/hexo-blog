@@ -2592,6 +2592,22 @@ article > p {
             
             
               <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/notes/
+                  
+                  
+                  
+                    id="notes"
+                  >
+                  <i class='fad fa-books GREENSEA fa-fw fa-fw'></i>笔记
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" 
                   
                   
@@ -2778,6 +2794,22 @@ article > p {
               
             
               <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/notes/
+                  
+                  
+                  
+                    id="notes"
+                  >
+                  <i class='fad fa-books GREENSEA fa-fw fa-fw'></i>笔记
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" 
                   
                   
@@ -2935,6 +2967,13 @@ article > p {
       <div class='list-h'>
         
           
+            <a href="/notes/"
+              
+              
+              id="notes">
+              <p>笔记</p>
+            </a>
+          
             <a href="/about/"
               
               
@@ -3010,7 +3049,7 @@ article > p {
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fad fa-keyboard PETERRIVE fa-fw" aria-hidden="true"></i>
-      <p>字数：177 字</p>
+      <p>字数：183 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -3035,9 +3074,9 @@ article > p {
 <p>首先需要安装必须的配置，因为我是使用的 anaconda 所以使用 Conda 进行安装。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -c conda-forge python-kaleido</span><br></pre></td></tr></table></figure>
 
-<p>如果是使用的 pip 管理的话，可以使用 <code>pip install kaleido</code> 直接安装。</p>
-<p>然后在代码中增加下面的代码段：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import plotly.graph_objects as go</span><br><span class="line">fig = go.Figure()</span><br><span class="line">fig.write_image(&quot;image.png&quot;)</span><br></pre></td></tr></table></figure>
+<p>如果是使用的 pip 管理的话，可以使用 <code>pip install -U kaleido</code> 直接安装。</p>
+<p>同时使用 <code>fig.write_imgage(&#39;xxx.png&#39;)</code> 来保存图片。</p>
+<figure class="highlight plaintext"><figcaption><span>保存图片</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import plotly.graph_objects as go</span><br><span class="line">fig = go.Figure()</span><br><span class="line">fig.write_image(&quot;image.png&quot;)</span><br></pre></td></tr></table></figure>
 
 <p>如果希望保存的是其它类型的图片，则可以修改对应的后缀，包括 <strong>png/jpeg/wdbp/svg/pdf</strong> 等类型。</p>
 <p>如果使用其它引擎进行图片生成的话，可以使用 <code>fig.to_image(format=&#39;png&#39;, engine=&#39;kaleido&#39;)</code>进行生成。</p>
@@ -3095,10 +3134,10 @@ article > p {
         
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-02T23:43:09+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-12T21:18:36+08:00">
   <a class='notlink'>
     <i class="fad fa-edit GREENSEA fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年7月2日</p>
+    <p>更新于：2021年7月12日</p>
   </a>
 </div>
 
