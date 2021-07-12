@@ -7,6 +7,9 @@ navbar:
     - name: 首页
       icon: fad fa-helmet-battle GREENSEA
       url: /
+    - name: 笔记
+      icon: fad fa-books GREENSEA fa-fw
+      url: /notes/
     - name: 导航
       icon: fad fa-cube NEPHRITIS
       rows:
@@ -44,6 +47,8 @@ cover:
   title: 夏南瓜的小站
   search: 知无不言
   features:
+    - name: 笔记
+      url: /notes/
     - name: 关于
       url: /about/
     - name: 友链
@@ -150,9 +155,7 @@ sidebar:
         icon: fad fa-praying-hands ASBESTOS
         title: 更新日志
       content:
-        - <p>1. 文章迁移到 Hexo</p>
-        - <p>2. 重新配置主题样式</p>
-        - <p>3. 增加 twikoo 配置</p>
+        - '<p>文章拆分学习笔记。</p>'
     # 自定义 站内导航    
     navigation:
       class: grid
