@@ -3059,7 +3059,7 @@ article > p {
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fad fa-keyboard PETERRIVE fa-fw" aria-hidden="true"></i>
-      <p>字数：438 字</p>
+      <p>字数：513 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -3080,30 +3080,33 @@ article > p {
   
   
   
-  <h2 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h2><p>$$<br>CMO = \frac{S_u-S_d} {S_u+S_d} \times 100<br>$$</p>
-<h2 id="回测"><a href="#回测" class="headerlink" title="回测"></a>回测</h2><h3 id="动量摆动策略"><a href="#动量摆动策略" class="headerlink" title="动量摆动策略"></a>动量摆动策略</h3><p>实现的思路非常简单，就是计算出基金组合中所有的基金的钱德摆动值，然后取最高的一支买入，然后每天都依据收盘价计算出动量最好的一支基金，如果不再是最好的，则卖出当前的基金，买入最好的那支。</p>
+  <h1 id="钱德摆动策略"><a href="#钱德摆动策略" class="headerlink" title="钱德摆动策略"></a>钱德摆动策略</h1><h2 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h2><p>$$<br>CMO = \frac{S_u-S_d} {S_u+S_d} \times 100<br>$$</p>
+<h2 id="回测"><a href="#回测" class="headerlink" title="回测"></a>回测</h2><h3 id="指标"><a href="#指标" class="headerlink" title="指标"></a>指标</h3><p>钱德摆动指标在[[backtrader]]的默认指标中是没有的，但是可以在[[ta-lib]]中获取，所以在初始化时，使用下面的方式。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bt.talib.CMO(i.close, timeperiod=self.params.period)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="钱德动量摆动策略"><a href="#钱德动量摆动策略" class="headerlink" title="钱德动量摆动策略"></a>钱德动量摆动策略</h3><p>实现的思路非常简单，就是计算出基金组合中所有的基金的钱德摆动值，然后取最高的一支买入，然后每天都依据收盘价计算出动量最好的一支基金，如果不再是最好的，则卖出当前的基金，买入最好的那支。</p>
 <p>基金组合选择的是 <strong>沪深 300</strong>，<strong>中证 500</strong> 和 <strong>创业板</strong> 三支。</p>
-<p>回测最近三年的数据，起始资金为 140000.00 元。与上次的数据做一下比较，可以说是非常好的，回撤也才 17.09% 。</p>
+<p>回测最近三年的数据，起始资金为 1000000.00 元。与上次的数据做一下比较，可以说是非常好的，回撤也才 17.09% 。</p>
 <p>这个策略的实现和动量策略差不多，只不过在指标不同，总体思路是一样的。</p>
 <table>
 <thead>
 <tr>
-<th>总利润</th>
 <th>投资回报率</th>
 <th>夏普指数</th>
 <th>最大回撤</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>127138.56</td>
-<td>195.16%</td>
-<td>1.27</td>
-<td>17.09%</td>
+<td>148.87%</td>
+<td>0.94</td>
+<td>16.11%</td>
 </tr>
 </tbody></table>
-<p>总体来说，收益也相差不多，但最查看对应的回测的图片可以发现，在持续上涨过程中，交易次数过多了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zucchiniy/common@master/images/momosc.png" alt="动量钟摆策略买卖点"></p>
-<h2 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h2><h3 id="减少回撤"><a href="#减少回撤" class="headerlink" title="减少回撤"></a>减少回撤</h3><p>动量摆动策略：如果三支基金都低于 100 ，则空仓或者买入债券型基金。</p>
+<p>总体来说，收益一般，但是比随意的交易要好很多了。</p>
+<p>查看对应的回测的图片可以发现，在持续上涨过程中，交易次数过多了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zucchiniy/common@master/images/cmo.png" alt="动量钟摆策略买卖点"></p>
+<h2 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h2><h3 id="减少交易次数"><a href="#减少交易次数" class="headerlink" title="减少交易次数"></a>减少交易次数</h3><p>与动量摆策略一样，还是应该选择减少交易次数才能获得更好的收益。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>策略的收益还是不错的，从 2015 年开始到现在，约 128% 的收益，与富国天惠比较一下，将时间拉到 2005 年 11 月 16 日。</p>
 <p>再重新跑一下。</p>
 <table>
@@ -3116,25 +3119,26 @@ article > p {
 </tr>
 </thead>
 <tbody><tr>
-<td>动量摆动策略</td>
-<td>8.07</td>
-<td>0.72</td>
-<td>23.48</td>
+<td>钱德摆动策略</td>
+<td>5.03</td>
+<td>0.45</td>
+<td>47.18%</td>
 </tr>
 <tr>
 <td>动量策略</td>
 <td>4.36</td>
 <td>0.62</td>
-<td>22.05</td>
+<td>22.05%</td>
 </tr>
 <tr>
 <td>富国天惠</td>
 <td>21.55</td>
 <td>1.04</td>
-<td>28.37</td>
+<td>28.37%</td>
 </tr>
 </tbody></table>
-<p>恩，还是比富国天惠差很多呀。但是能看出动量钟摆要比动量策略稳定不少，后面再优化一下两个策略。</p>
+<p>恩，还是比富国天惠差很多呀。</p>
+<p>另外夏普率也低不说，回撤还达到了 47% ，基本上等于有一半的回撤了，这个基本可以抛弃掉了。</p>
 
   
   
@@ -3183,16 +3187,16 @@ article > p {
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%92%B1%E5%BE%B7%E5%8A%A8%E9%87%8F%E6%91%86%E5%8A%A8/" rel="nofollow"><i class="fad fa-hashtag WETASPHALT fa-fw" aria-hidden="true"></i><p>钱德动量摆动</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Momentum-Oscillator/" rel="nofollow"><i class="fad fa-hashtag WETASPHALT fa-fw" aria-hidden="true"></i><p>Momentum Oscillator</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%92%B1%E5%BE%B7%E5%8A%A8%E9%87%8F%E6%91%86%E5%8A%A8/" rel="nofollow"><i class="fad fa-hashtag WETASPHALT fa-fw" aria-hidden="true"></i><p>钱德动量摆动</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Chande-Momentum-Oscillator/" rel="nofollow"><i class="fad fa-hashtag WETASPHALT fa-fw" aria-hidden="true"></i><p>Chande Momentum Oscillator</p></a></div>
 
 
         
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-13T21:38:22+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-28T14:38:22+08:00">
   <a class='notlink'>
     <i class="fad fa-edit GREENSEA fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年7月13日</p>
+    <p>更新于：2021年7月28日</p>
   </a>
 </div>
 
@@ -3202,7 +3206,7 @@ article > p {
           <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fad fa-calendar-alt TURQUOISE fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年7月13日</p>
+    <p>发布于：2021年7月28日</p>
   </a>
 </div>
 
@@ -3219,10 +3223,10 @@ article > p {
     <div class="prev-next">
       
       
-        <a class='next' href='/posts/bcb5a920.html'>
-          <p class='title'>策略收益比较<i class="fad fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>标杆基金标杆基金有几支，其中最强的就是富国天惠成长混合，最近比几年比较火的兴全和润分级混合还有我比较关注的广发多因子混合。
-投资策略目前已经进入实盘的有两个策略，分别是网格策略和布林线策略。其它...</p>
+        <a class='next' href='/posts/ee919a26.html'>
+          <p class='title'>动量摆动策略<i class="fad fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>策略动量策略中，只计算了差值，但实际上有一些上涨可能因为本身价格过高导致无法准备的表达具体的收益变化，所以使用百分比来表示上涨的量。
+回测基金组合选择的是 沪深 300，中证 500 和 创业板...</p>
         </a>
       
     </div>
@@ -3340,7 +3344,7 @@ article > p {
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA"><span class="toc-text">理论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E6%B5%8B"><span class="toc-text">回测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E6%91%86%E5%8A%A8%E7%AD%96%E7%95%A5"><span class="toc-text">动量摆动策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="toc-text">优化思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E5%B0%91%E5%9B%9E%E6%92%A4"><span class="toc-text">减少回撤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA"><span class="toc-text">理论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E6%B5%8B"><span class="toc-text">回测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E6%A0%87"><span class="toc-text">指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%B1%E5%BE%B7%E5%8A%A8%E9%87%8F%E6%91%86%E5%8A%A8%E7%AD%96%E7%95%A5"><span class="toc-text">钱德动量摆动策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="toc-text">优化思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E5%B0%91%E4%BA%A4%E6%98%93%E6%AC%A1%E6%95%B0"><span class="toc-text">减少交易次数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
     </div>
   </section>
 

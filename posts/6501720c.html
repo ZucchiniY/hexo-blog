@@ -3094,7 +3094,7 @@ article > p {
 <h2 id="构建复盘"><a href="#构建复盘" class="headerlink" title="构建复盘"></a>构建复盘</h2><h3 id="场内基金选择"><a href="#场内基金选择" class="headerlink" title="场内基金选择"></a>场内基金选择</h3><p>因为是针对沪深 300 的操作，所以选择的是 510300 这支基金，看一下开始的时间为 2012 年 5 月 4 日。</p>
 <p>其它还有一些基金的规模不够大，或者是时间相对比较短，选就要选最大的一支。</p>
 <p>为了复测这个效果是否合理，再选择两支基金进行测试，一支选择与深沪 300 同源的中证 500 的指数，510500 ，另外一支选择创业板 159915 这支 ETF。</p>
-<p>首先准备数据，从 Akshare 上下载对应的数据文件。</p>
+<p>首先准备数据，从[[Akshare]]上下载对应的数据文件。</p>
 <figure class="highlight python"><figcaption><span>下载ETF基金</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fund_detail = ak.fund_etf_hist_sina(symbol=etf_fund_code)</span><br></pre></td></tr></table></figure>
 
 <p>然后将三支基金的数据文件下载下来，分别是 <strong>sz159915 创业板</strong> 、<strong>sh510300 沪深 300</strong> 和 <strong>sh510500 中证 500</strong> 三支基金。</p>
@@ -3106,7 +3106,7 @@ article > p {
 <p>为什么选择 2015 年 4 月 15 日<br>主要是因为 akshare 上的中证 500 的数据在这个时间点之前是有问题的，回测之后发现收益率达到了 35 倍，这显然是不可能的。所以查看了一下数据，可能是中间编制修改过，但是价格没有重新计算导致有问题。<br>后面把这三支基金都换成指数来测试一下，应该会更加准确。</p>
 </blockquote>
 <p>当然也有可能我的选择不是特别合理，可以把开始时间拉到 2006 年开始，但是这就需要按指数进行测试，不能使用场内基金。后面完成了，会增加回测代码的。</p>
-<p>初始资金 140000.00 。</p>
+<p>初始资金 1000000.00 。在[[backtrader]]中跑一下回测。</p>
 <table>
 <thead>
 <tr>
@@ -3282,8 +3282,8 @@ article > p {
       
         <a class='prev' href='/posts/28ed95b9.html'>
           <p class='title'><i class="fad fa-chevron-left" aria-hidden="true"></i>动量策略</p>
-          <p class='content'>理论动量策略： 股票的收益率有延续原来的运动方向的趋势。——强者恒强。
-依据这个理论，还有一个延伸的出来的策略——动量反转策略： 表现差的股票在其后的一段时间内有强烈的趋势经历相当大的逆转。——...</p>
+          <p class='content'>动量策略理论动量策略： 股票的收益率有延续原来的运动方向的趋势。——强者恒强。
+依据这个理论，还有一个延伸的出来的策略——动量反转策略： 表现差的股票在其后的一段时间内有强烈的趋势经历相当大的逆...</p>
         </a>
       
       

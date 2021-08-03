@@ -3059,13 +3059,13 @@ article > p {
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fad fa-keyboard PETERRIVE fa-fw" aria-hidden="true"></i>
-      <p>字数：486 字</p>
+      <p>字数：626 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fad fa-hourglass-half BELIZEHOLE fa-fw" aria-hidden="true"></i>
-      <p>时长：1 分钟</p>
+      <p>时长：2 分钟</p>
     </a>
   </div>
 
@@ -3080,7 +3080,8 @@ article > p {
   
   
   
-  <h2 id="标杆基金"><a href="#标杆基金" class="headerlink" title="标杆基金"></a>标杆基金</h2><p>标杆基金有几支，其中最强的就是富国天惠成长混合，最近比几年比较火的兴全和润分级混合还有我比较关注的广发多因子混合。</p>
+  <h1 id="策略收益比较"><a href="#策略收益比较" class="headerlink" title="策略收益比较"></a>策略收益比较</h1><p>本文主要将实现的几种策略与一些优秀的主动基金进行比较。查看收益的差别。</p>
+<h2 id="标杆基金"><a href="#标杆基金" class="headerlink" title="标杆基金"></a>标杆基金</h2><p>标杆基金有几支，其中最强的就是富国天惠成长混合，最近比几年比较火的兴全和润分级混合还有我比较关注的广发多因子混合。</p>
 <h2 id="投资策略"><a href="#投资策略" class="headerlink" title="投资策略"></a>投资策略</h2><p>目前已经进入实盘的有两个策略，分别是网格策略和布林线策略。其它的主要是一些回测数据的比较，后面会逐渐把这些策略进行实盘的。</p>
 <p><strong>因为一般比较关注的是近三年的收益情况，所以回没主要以近三年的数据进行比较。</strong></p>
 <h3 id="周内策略"><a href="#周内策略" class="headerlink" title="周内策略"></a>周内策略</h3><p><a target="_blank" rel="noopener" href="https://www.zucchiniy.cn/posts/6501720c.html">周内交易策略</a></p>
@@ -3109,7 +3110,7 @@ article > p {
 </tr>
 </tbody></table>
 <h3 id="定投策略"><a href="#定投策略" class="headerlink" title="定投策略"></a>定投策略</h3><p>还没有具体的投资策略，后面补充。</p>
-<h3 id="动量策略"><a href="#动量策略" class="headerlink" title="动量策略"></a>动量策略</h3><p><a target="_blank" rel="noopener" href="https://www.zucchiniy.cn/posts/46291d8a.html">动量策略</a></p>
+<h3 id="动量策略"><a href="#动量策略" class="headerlink" title="动量策略"></a>动量策略</h3><p><a target="_blank" rel="noopener" href="https://www.zucchiniy.cn/posts/28ed95b9.html">动量策略</a></p>
 <p>原始动量策略，收益尚可，查看三年的收益率，可以看到只有今年的收益率较低，2019年和2020年是优于动量钟摆策略的。</p>
 <table>
 <thead>
@@ -3135,11 +3136,14 @@ article > p {
 <td>7.3%</td>
 </tr>
 </tbody></table>
+<h3 id="钱德摆策略"><a href="#钱德摆策略" class="headerlink" title="钱德摆策略"></a>钱德摆策略</h3><p><a target="_blank" rel="noopener" href="https://www.zucchiniy.cn/posts/926929f6.html">钱德钟摆策略</a></p>
+<p>回撤较大，夏普很低，没有继续优化的必要。</p>
 <h3 id="动量钟摆策略"><a href="#动量钟摆策略" class="headerlink" title="动量钟摆策略"></a>动量钟摆策略</h3><p><a target="_blank" rel="noopener" href="https://www.zucchiniy.cn/posts/46291d8a.html">动量钟摆策略</a></p>
-<p>动量钟摆策略优化 2.0 版</p>
+<p>动量钟摆策略优化 3.1 版</p>
 <ul>
 <li>在策略中，判断如果两支基金都处于大于 100 的情况下，不再切换基金，减少操作次数。</li>
 <li>与 1.0 相比，收益要低了，但是同样的回撤也降低了。</li>
+<li>与 2.0 相比，对应的组合做了修改，增加了一个动量因子参数，用来减少上涨过程中的操作</li>
 </ul>
 <table>
 <thead>
@@ -3154,62 +3158,68 @@ article > p {
 </tr>
 <tr>
 <td>2019</td>
-<td>31.8%</td>
+<td>39.6%</td>
 </tr>
 <tr>
 <td>2020</td>
-<td>32.0%</td>
+<td>63.5%</td>
 </tr>
 <tr>
 <td>2021</td>
-<td>18.5%</td>
+<td>45.8%</td>
 </tr>
 </tbody></table>
-<h2 id="收益比较"><a href="#收益比较" class="headerlink" title="收益比较"></a>收益比较</h2><p>将近三年中三支基金与策略投资方案按收益率进行排序。</p>
+<h2 id="收益比较"><a href="#收益比较" class="headerlink" title="收益比较"></a>收益比较</h2><p>与最近比较火的几个基金组合，还有主动基金进行比较，具体的收益如下。</p>
 <table>
 <thead>
 <tr>
-<th>基金</th>
-<th>近三年收益</th>
-<th>近三年最大回撤</th>
+<th>标的</th>
+<th>近一年收益</th>
+<th>最大回撤</th>
 <th>夏普比率</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>富国天惠成长混合 161005</td>
-<td>99.59%</td>
-<td>28.37%</td>
-<td>1.04</td>
-</tr>
-<tr>
-<td>兴全合润混合 163406</td>
-<td>151.71%</td>
-<td>19.98%</td>
-<td>1.44</td>
-</tr>
-<tr>
-<td>周内交易策略</td>
-<td>161.00%</td>
-<td>17.65%</td>
-<td>0.72</td>
-</tr>
-<tr>
-<td>动量策略</td>
-<td>191.02%</td>
-<td>12.84%</td>
-<td>1.11</td>
-</tr>
-<tr>
-<td>动量钟摆策略 2.0</td>
-<td>195.4%</td>
-<td>17.24%</td>
-<td>1.27</td>
-</tr>
-<tr>
-<td>广发多因子混合 002943</td>
-<td>211.89%</td>
+<td>基金-广发多因子混合 002943</td>
+<td>87.13%</td>
 <td>23.67%</td>
 <td>1.56</td>
+</tr>
+<tr>
+<td>基金-信诚周期轮动 165516</td>
+<td>86.77%</td>
+<td>22.56%</td>
+<td>1.72</td>
+</tr>
+<tr>
+<td>策略-动量钟摆策略 3.1 三代</td>
+<td>63.49%</td>
+<td>12.25%</td>
+<td>1.67</td>
+</tr>
+<tr>
+<td>组合-创金-为你创金</td>
+<td>50.39%</td>
+<td>20.00%</td>
+<td>2.34</td>
+</tr>
+<tr>
+<td>基金-中邮新思路 001224</td>
+<td>42.61%</td>
+<td>18.53%</td>
+<td>1.75</td>
+</tr>
+<tr>
+<td>组合-景顺长城-全明星</td>
+<td>29.44%</td>
+<td>10.47%</td>
+<td>2.12</td>
+</tr>
+<tr>
+<td>基金-前海开源中国稀缺资产 001679</td>
+<td>23.97%</td>
+<td>23.85%</td>
+<td>1.81</td>
 </tr>
 </tbody></table>
 
@@ -3266,10 +3276,10 @@ article > p {
         
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-13T16:37:35+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-28T16:37:35+08:00">
   <a class='notlink'>
     <i class="fad fa-edit GREENSEA fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年7月13日</p>
+    <p>更新于：2021年7月28日</p>
   </a>
 </div>
 
@@ -3295,17 +3305,17 @@ article > p {
   
     <div class="prev-next">
       
-        <a class='prev' href='/posts/926929f6.html'>
-          <p class='title'><i class="fad fa-chevron-left" aria-hidden="true"></i>钱德摆动策略</p>
-          <p class='content'>理论$$CMO = \frac{S_u-S_d} {S_u+S_d} \times 100$$
-回测动量摆动策略实现的思路非常简单，就是计算出基金组合中所有的基金的钱德摆动值，然后取最高的一支买...</p>
+        <a class='prev' href='/posts/ee919a26.html'>
+          <p class='title'><i class="fad fa-chevron-left" aria-hidden="true"></i>动量摆动策略</p>
+          <p class='content'>策略动量策略中，只计算了差值，但实际上有一些上涨可能因为本身价格过高导致无法准备的表达具体的收益变化，所以使用百分比来表示上涨的量。
+回测基金组合选择的是 沪深 300，中证 500 和 创业板...</p>
         </a>
       
       
         <a class='next' href='/posts/28ed95b9.html'>
           <p class='title'>动量策略<i class="fad fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>理论动量策略： 股票的收益率有延续原来的运动方向的趋势。——强者恒强。
-依据这个理论，还有一个延伸的出来的策略——动量反转策略： 表现差的股票在其后的一段时间内有强烈的趋势经历相当大的逆转。——...</p>
+          <p class='content'>动量策略理论动量策略： 股票的收益率有延续原来的运动方向的趋势。——强者恒强。
+依据这个理论，还有一个延伸的出来的策略——动量反转策略： 表现差的股票在其后的一段时间内有强烈的趋势经历相当大的逆...</p>
         </a>
       
     </div>
@@ -3370,7 +3380,7 @@ article > p {
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E6%9D%86%E5%9F%BA%E9%87%91"><span class="toc-text">标杆基金</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5"><span class="toc-text">投资策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%A8%E5%86%85%E7%AD%96%E7%95%A5"><span class="toc-text">周内策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%8A%95%E7%AD%96%E7%95%A5"><span class="toc-text">定投策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E7%AD%96%E7%95%A5"><span class="toc-text">动量策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E9%92%9F%E6%91%86%E7%AD%96%E7%95%A5"><span class="toc-text">动量钟摆策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E7%9B%8A%E6%AF%94%E8%BE%83"><span class="toc-text">收益比较</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E6%9D%86%E5%9F%BA%E9%87%91"><span class="toc-text">标杆基金</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5"><span class="toc-text">投资策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%A8%E5%86%85%E7%AD%96%E7%95%A5"><span class="toc-text">周内策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%8A%95%E7%AD%96%E7%95%A5"><span class="toc-text">定投策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E7%AD%96%E7%95%A5"><span class="toc-text">动量策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%B1%E5%BE%B7%E6%91%86%E7%AD%96%E7%95%A5"><span class="toc-text">钱德摆策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E9%92%9F%E6%91%86%E7%AD%96%E7%95%A5"><span class="toc-text">动量钟摆策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E7%9B%8A%E6%AF%94%E8%BE%83"><span class="toc-text">收益比较</span></a></li></ol>
     </div>
   </section>
 

@@ -3059,7 +3059,7 @@ article > p {
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fad fa-keyboard PETERRIVE fa-fw" aria-hidden="true"></i>
-      <p>字数：586 字</p>
+      <p>字数：603 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -3080,10 +3080,10 @@ article > p {
   
   
   
-  <h2 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h2><p>动量策略： <strong>股票的收益率有延续原来的运动方向的趋势。——强者恒强。</strong></p>
+  <h1 id="动量策略"><a href="#动量策略" class="headerlink" title="动量策略"></a>动量策略</h1><h2 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h2><p>动量策略： <strong>股票的收益率有延续原来的运动方向的趋势。——强者恒强。</strong></p>
 <p>依据这个理论，还有一个延伸的出来的策略——动量反转策略： <strong>表现差的股票在其后的一段时间内有强烈的趋势经历相当大的逆转。——弱者转强。</strong></p>
 <h2 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h2><p>依据这两个理论反做的交易策略，也就是在一段时间内，选择效果最好的或者最差的期待配置。</p>
-<h2 id="回测"><a href="#回测" class="headerlink" title="回测"></a>回测</h2><h3 id="动量策略"><a href="#动量策略" class="headerlink" title="动量策略"></a>动量策略</h3><p>选择一个基金组合，从中选择动量最好的一支基金买入持有至下一个周期。</p>
+<h2 id="回测"><a href="#回测" class="headerlink" title="回测"></a>回测</h2><h3 id="动量策略-1"><a href="#动量策略-1" class="headerlink" title="动量策略"></a>动量策略</h3><p>选择一个基金组合，从中选择动量最好的一支基金买入持有至下一个周期。使用的指标是[[backtrader]]中的动量指标。</p>
 <figure class="highlight python"><figcaption><span>momentum</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">next</span>(<span class="params">self</span>):</span></span><br><span class="line">    buy_id = <span class="number">999</span></span><br><span class="line">    c = [</span><br><span class="line">        i.momentum[<span class="number">0</span>]  <span class="comment">#/ (i.datas[0].close + i.datas[0].open) * 2</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> self.mom</span><br><span class="line">    ]</span><br><span class="line">    index, value = c.index(<span class="built_in">max</span>(c)), <span class="built_in">max</span>(c)</span><br><span class="line">    <span class="keyword">if</span> value &gt; <span class="number">0</span>:</span><br><span class="line">        buy_id = index</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(c)):</span><br><span class="line">        <span class="keyword">if</span> i != buy_id:</span><br><span class="line">            position_size = self.broker.getposition(</span><br><span class="line">                data=self.datas[i]).size</span><br><span class="line">            <span class="keyword">if</span> position_size != <span class="number">0</span>:</span><br><span class="line">                self.order_target_percent(data=self.datas[i], target=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> buy_id != <span class="number">999</span>:</span><br><span class="line">        position_size = self.broker.getposition(</span><br><span class="line">            data=self.datas[buy_id]).size</span><br><span class="line">        <span class="keyword">if</span> position_size == <span class="number">0</span>:</span><br><span class="line">            self.order_target_percent(data=self.datas[buy_id], target=<span class="number">0.98</span>)</span><br></pre></td></tr></table></figure>
 
 <p>实现的思路非常简单，就是计算出基金组合中所有的基金的动量值，然后取最高的一支买入，然后每天都依据收盘价计算出动量最好的一支基金，如果不再是最好的，则卖出当前的基金，买入最好的那支。</p>
@@ -3218,8 +3218,8 @@ article > p {
       
         <a class='prev' href='/posts/bcb5a920.html'>
           <p class='title'><i class="fad fa-chevron-left" aria-hidden="true"></i>策略收益比较</p>
-          <p class='content'>标杆基金标杆基金有几支，其中最强的就是富国天惠成长混合，最近比几年比较火的兴全和润分级混合还有我比较关注的广发多因子混合。
-投资策略目前已经进入实盘的有两个策略，分别是网格策略和布林线策略。其它...</p>
+          <p class='content'>策略收益比较本文主要将实现的几种策略与一些优秀的主动基金进行比较。查看收益的差别。
+标杆基金标杆基金有几支，其中最强的就是富国天惠成长混合，最近比几年比较火的兴全和润分级混合还有我比较关注的广发...</p>
         </a>
       
       
@@ -3291,7 +3291,7 @@ article > p {
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA"><span class="toc-text">理论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%96%E7%95%A5"><span class="toc-text">策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E6%B5%8B"><span class="toc-text">回测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E7%AD%96%E7%95%A5"><span class="toc-text">动量策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="toc-text">优化思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E5%8F%8D%E8%BD%AC"><span class="toc-text">动量反转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA"><span class="toc-text">理论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%96%E7%95%A5"><span class="toc-text">策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E6%B5%8B"><span class="toc-text">回测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E7%AD%96%E7%95%A5-1"><span class="toc-text">动量策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="toc-text">优化思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E5%8F%8D%E8%BD%AC"><span class="toc-text">动量反转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
     </div>
   </section>
 
